@@ -1,18 +1,18 @@
-# Your first Jenkins job 
+# Your first Jenkins job
 
-> So you want to bring some applications to the gridcloud eh ... ? 
+> So you want to bring some applications to the gridcloud eh ... ?
 
-This is a training and demonstration repo for writing -deploy jobs for our build and deploy system at http://ci.sagrid.ac.za:8080
+This is a training and demonstration repo for writing -deploy jobs for our build and deploy system at http://ci.sagrid.ac.za
 
-In general we want to make access to the SAGrid build system as open as possible, but manage the rights of anyone who wants to contribute. Since we want to automate as much as possible the delivery of new applications in this distributed environment, we need to have a stepping-stone project which can be personally managed by new users. This is the purpose of this repo. 
+In general we want to make access to the SAGrid build system as open as possible, but manage the rights of anyone who wants to contribute. Since we want to automate as much as possible the delivery of new applications in this distributed environment, we need to have a stepping-stone project which can be personally managed by new users. This is the purpose of this repo.
 
 # Purpose  of this repo
 
-This repository is to demonstrate, with high verbosity, how we expect new applications to be built, tested and deployed. This repository is thus an expression of good practice. As it is tested - like all other `-deploy` repos - with every commit, it is also an expression of the functional state of this good practice. 
+This repository is to demonstrate, with high verbosity, how we expect new applications to be built, tested and deployed. This repository is thus an expression of good practice. As it is tested - like all other `-deploy` repos - with every commit, it is also an expression of the functional state of this good practice.
 
 # How to use this repo
 
-Every jenkins job is connected to specific repo. Let's say you have a new application which you want to port - `myapp`. In order to get started, we expect you to 
+Every jenkins job is connected to specific repo. Let's say you have a new application which you want to port - `myapp`. In order to get started, we expect you to
 
   1. become a member of this organisation on github.
   1. fork this repo to your own github account (@user/myapp-deploy) and add the relevant files (see below)
@@ -30,7 +30,7 @@ Every jenkins job is connected to specific repo. Let's say you have a new applic
 
 Each deploy job should have at least two executable scripts :
 
-  1. `build.sh` 
+  1. `build.sh`
   2. `check-build.sh`
 
 These define basically two test phases, the **build** and **functional** test phases respectively.
@@ -52,7 +52,7 @@ The build phase should pass iff the expected libraries and executable files are 
 Here you are expected to prove that the application actually executes a test payload. You should write a script called `check-buld.sh` which does the following things:
 
   1. Load the modulefile created by `build.sh`
-  2. Execute the application with a predefined input or configuration - **it is your responsibility to provide this**. 
+  2. Execute the application with a predefined input or configuration - **it is your responsibility to provide this**.
   3. Check the validity of the output of the applicaiton - this may vary vastly between applications, but is likely to be something on `stdout` or the presence and content of a particular file.
 
 # But, like, what about ...
