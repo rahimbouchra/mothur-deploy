@@ -62,3 +62,11 @@ If you want to discuss this, or the whole system itself - either ask questions o
 # When things go wrong
 
 If you have a legitimate error, or need support, please [open an issue](../../issues)
+
+# Updates
+
+
+
+## Foundation Release 1
+
+Foundation Release 1 was published on 7th December 2015. This provided the basic platform with many tweaks still necessary.
