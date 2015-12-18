@@ -5,7 +5,7 @@
 # This is the demo version of a build script for the CODE-RADE. Customise it for your needs.  #
 ###############################################################################################
 
-# This script has check that the application that you want can be built on the build slaves.
+# This script has to check that the application that you want can be built on the build slaves.
 # There are very few libraries installed by default on the sites, so you have to assume the lowest
 # common denominator.
 
@@ -78,9 +78,17 @@ tar -xzf ${SRC_DIR}/${SOURCE_FILE} -C ${{WORKSPACE} --skip-old-files
 
 
 mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
-cd ${WORKSPACE}/${NAME}-${VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # Note that $SOFT_DIR is used as the target installation directory.
-./configure --prefix ${SOFT_DIR}
+# If there are many configuration parameters, put them on separate lines to help the change control
+# We need -fPIC because we will be building relocatable code.
+CFLAGS=-fPIC ../configure --prefix ${SOFT_DIR} \
+--enable-fft \
+--enable-static \
+--enable-cxx \
+--enable-shared \
+--enable-old-fft-full \
+--enable-assert
 
 # The build nodes have 8 cores, but jobs can be scheduled on them in parallel. There are 4 slots, so choose at most
 # a build paralellism of 2.
