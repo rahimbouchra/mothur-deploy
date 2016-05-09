@@ -1,6 +1,7 @@
 #!/bin/bash -e
 . /etc/profile.d/modules.sh
 module avail
+module add ci 
 module add boost/1.59.0-gcc-5.1.0-mpi-1.8.8
 module add readline/6.3 
 module add ncurses/5.9
