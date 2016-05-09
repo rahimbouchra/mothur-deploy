@@ -32,6 +32,7 @@ fi
 tar xzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 
 #mkdir -p ${WORKSPACE}/${NAME}-${VERSION}
+cp Makefile  ${WORKSPACE}/${NAME}-${VERSION}/Makefile
 cd ${WORKSPACE}/${NAME}-${VERSION}
 echo "Running the build"
 echo "mothur needs readline dev file ... disable  " 
