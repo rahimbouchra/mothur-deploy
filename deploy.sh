@@ -7,10 +7,8 @@ module add readline/6.3
 module add ncurses/5.9
 echo "making ${SOFT_DIR}"
 mkdir -p ${SOFT_DIR}
-
-cd ${WORKSPACE}/${NAME}_${VERSION}/
-export USEREADLINE=no
-export BOOST_LIBRARY_DIR=$BOOST_DIR/lib
+cp Makefile ${WORKSPACE}/${NAME}-${VERSION}/Makefile
+cd ${WORKSPACE}/${NAME}-${VERSION}/
 make 
 
 # copy generated exe to soft_dir
